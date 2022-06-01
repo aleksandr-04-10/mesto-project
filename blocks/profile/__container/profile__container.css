@@ -1,7 +1,7 @@
 .profile__container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 @media screen and (max-width: 718px) {

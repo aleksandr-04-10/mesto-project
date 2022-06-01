@@ -1,8 +1,12 @@
 .profile__button-edit {
-  display: inline;
-  margin-left: 10px;
+  margin: 0;
+  background-image: url(../../../images/pero.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .profile__button-edit:hover {
@@ -11,7 +15,6 @@
 
 @media screen and (max-width: 740px) {
   .profile__button-edit {
-    margin-left: 10px;
     width: 18px;
     height: 18px;
   }

@@ -1,5 +1,6 @@
 .elements__place-photo {
   display: block;
   width: 100%;
+  height: 282px;
   object-fit: cover;
 }

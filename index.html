@@ -10,85 +10,81 @@
     <title>Проект "Место"</title>
   </head>
   <body class="page">
-    <section class="popup popup_opened">
-      <div class="popup__container">
-        <form class="popup__main">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <fieldset class="popup__input-container">
-            <input type="text" class="popup__info-field" placeholder="Жак-Ив Кусто">
-            <input type="text" class="popup__info-field" placeholder="Исследователь океана">
-          </fieldset>
-          <fieldset class="popup__batton">
-            <button type="submit" class="popup__save">Сохранить</button>
-          </fieldset>
-        </form>
-        <img class="popup__close-icon" src="./images/close-icon.svg" alt="Белый крестик">
-      </div>
-    </section>
     <header class="header">
         <img class="header__logo" src="./images/header-logo.svg" alt="Логотип с надписью место">
     </header>
     <main class="content">
         <section class="profile">
-            <div class="profile__container">
-                <img class="profile__avatar" src="./images/kusto-avatar.jpg" alt="Портрет Кусто">
-                <div class="profile__info">
-                    <h1 class="profile__title">Жак-Ив&nbspКусто</h1>
-                    <img class="profile__button-edit" src="./images/pero.svg" alt="Перо">
-                    <p class="profile__subtitle">Исследователь океана</p>
-                </div>
+          <div class="profile__container">
+            <img class="profile__avatar" src="./images/kusto-avatar.jpg" alt="Портрет Кусто">
+            <div class="profile__info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button type="submit" class="profile__button-edit"></button>
+              <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <div class="profile__button">
-                <img class="profile__button-add" src="./images/plus.svg" alt="Изображение плюса">
+          </div>
+          <button type="submit" class="profile__button-add"></button>
+        </section>
+        <div class="elements">
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
+            <div class="elements__caption">
+              <h2 class="elements__title">Карачаевск</h2>
+              <button type="submit" class="elements__like elements__like_active"></button>
             </div>
-        </section>
-        <section class="elements">
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Карачаевск</h2>
-                    <div class="elements__like elements__like_active"></div>
-                </figcaption>
-            </figure>
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <div class="elements__like"></div>
-                </figcaption>
-            </figure>
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Домбай</h2>
-                    <div class="elements__like"></div>
-                </figcaption>
-            </figure>
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <div class="elements__like"></div>
-                </figcaption>
-            </figure>
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Домбай</h2>
-                    <div class="elements__like elements__like_active"></div>
-                </figcaption>
-            </figure>
-            <figure class="elements__card">
-                <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
-                <figcaption class="elements__caption">
-                    <h2 class="elements__title">Карачаево-Черкессия</h2>
-                    <div class="elements__like"></div>
-                </figcaption>
-            </figure>
-        </section>
+          </article>
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
+            <div class="elements__caption">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button type="submit" class="elements__like"></button>
+             </div>
+          </article>
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
+            <div class="elements__caption">
+              <h2 class="elements__title">Домбай</h2>
+              <button type="submit" class="elements__like"></button>
+            </div>
+          </article>
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
+            <div class="elements__caption">
+              <h2 class="elements__title">Гора Эльбрус</h2>
+              <button type="submit" class="elements__like"></button>
+            </div>
+          </article>
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
+            <div class="elements__caption">
+              <h2 class="elements__title">Домбай</h2>
+              <button type="submit" class="elements__like"></button>
+            </div>
+          </article>
+          <article class="elements__card">
+            <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
+            <div class="elements__caption">
+              <h2 class="elements__title">Карачаево-Черкессия</h2>
+              <button type="submit" class="elements__like"></button>
+            </div>
+          </article>
+        </div>
     </main>
     <footer class="footer">
         <p class="footer__copy">&copy;2020 Mesto Russia</p>
     </footer>
+    <div class="popup popup_opened">
+        <form class="popup__main" name="profil">
+          <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <fieldset class="popup__input-container">
+              <input type="text" name="name" class="popup__info-field" placeholder="Жак-Ив Кусто">
+              <input type="text" name="profi" class="popup__info-field" placeholder="Исследователь океана">
+            </fieldset>
+            <button type="submit" class="popup__save">Сохранить</button>
+          </div>
+          <button type="submit" class="popup__close-icon"></button>
+        </form>
+    </div>
   </body>
 </html>

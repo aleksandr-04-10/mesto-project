@@ -1,18 +1,23 @@
 .profile__info {
-    margin-left: 30px;
-    max-width: 336px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-left: 30px;
+  max-width: 336px;
+  gap: 16px 18px;
 }
 
 @media screen and (max-width: 723px) {
   .profile__info {
+    margin-top: 26px;
     margin-left: 0;
-    text-align: center;
+    justify-content: center;
+    gap: 14px 10px;
   }
 }
 
 @media screen and (max-width: 330px) {
   .profile__info {
-    margin-top: 26px;
     width: 100%;
   }
 }
