@@ -1,0 +1,16 @@
+.popup__main {
+  margin-top: 40px;
+  max-width: 430px;
+  min-height: 330px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 520px) {
+  .popup__main {
+    margin-top: 16px;
+    max-width: 282px;
+    min-height: 322px;
+  }
+}
