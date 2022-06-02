@@ -20,7 +20,7 @@
   color: #000;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 560px) {
   .popup__info-field {
     margin-left: 22px;
     min-width: 238px;

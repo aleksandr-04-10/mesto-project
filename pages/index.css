@@ -11,7 +11,6 @@
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__save/popup__save.css);
-@import url(../blocks/popup/__batton/popup__batton.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
 /* Стили следующей секции header*/
 @import url(../blocks/header/header.css);

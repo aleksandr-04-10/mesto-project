@@ -1,5 +1,6 @@
 .profile__button-edit {
   margin: 0;
+  border: 0;
   background-image: url(../../../images/pero.svg);
   background-size: cover;
   background-repeat: no-repeat;

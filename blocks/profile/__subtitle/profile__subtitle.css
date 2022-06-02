@@ -14,8 +14,6 @@
 @media screen and (max-width: 430px) {
   .profile__subtitle {
     max-width: 282px;
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
   }

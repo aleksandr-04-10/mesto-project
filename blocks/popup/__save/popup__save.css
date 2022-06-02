@@ -19,7 +19,7 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 560px) {
   .popup__save {
     margin-left: 22px;
     min-width: 238px;

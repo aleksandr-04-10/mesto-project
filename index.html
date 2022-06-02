@@ -19,53 +19,53 @@
             <img class="profile__avatar" src="./images/kusto-avatar.jpg" alt="Портрет Кусто">
             <div class="profile__info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="submit" class="profile__button-edit"></button>
+              <button type="button" class="profile__button-edit"></button>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
-          <button type="submit" class="profile__button-add"></button>
+          <button type="button" class="profile__button-add"></button>
         </section>
         <div class="elements">
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
             <div class="elements__caption">
               <h2 class="elements__title">Карачаевск</h2>
-              <button type="submit" class="elements__like elements__like_active"></button>
+              <button type="button" class="elements__like elements__like_active"></button>
             </div>
           </article>
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
             <div class="elements__caption">
               <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="submit" class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
              </div>
           </article>
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
             <div class="elements__caption">
               <h2 class="elements__title">Домбай</h2>
-              <button type="submit" class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
             </div>
           </article>
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
             <div class="elements__caption">
               <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="submit" class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
             </div>
           </article>
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
             <div class="elements__caption">
               <h2 class="elements__title">Домбай</h2>
-              <button type="submit" class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
             </div>
           </article>
           <article class="elements__card">
             <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
             <div class="elements__caption">
               <h2 class="elements__title">Карачаево-Черкессия</h2>
-              <button type="submit" class="elements__like"></button>
+              <button type="button" class="elements__like"></button>
             </div>
           </article>
         </div>
@@ -74,17 +74,18 @@
         <p class="footer__copy">&copy;2020 Mesto Russia</p>
     </footer>
     <div class="popup popup_opened">
-        <form class="popup__main" name="profil">
+          <button type="button" class="popup__close-icon"></button>
           <div class="popup__container">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <fieldset class="popup__input-container">
-              <input type="text" name="name" class="popup__info-field" placeholder="Жак-Ив Кусто">
-              <input type="text" name="profi" class="popup__info-field" placeholder="Исследователь океана">
-            </fieldset>
-            <button type="submit" class="popup__save">Сохранить</button>
+            <form class="popup__main" name="profil">
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <fieldset class="popup__input-container">
+                <input type="text" name="name" class="popup__info-field" placeholder="Ваше имя">
+                <input type="text" name="profi" class="popup__info-field" placeholder="Ваша профессия">
+              </fieldset>
+              <button type="submit" class="popup__save">Сохранить</button>
+            </form>
           </div>
-          <button type="submit" class="popup__close-icon"></button>
-        </form>
+
     </div>
   </body>
 </html>
