@@ -26,65 +26,53 @@
           <button type="button" class="profile__button-add"></button>
         </section>
         <div class="elements">
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
-            <div class="elements__caption">
-              <h2 class="elements__title">Карачаевск</h2>
-              <button type="button" class="elements__like elements__like_active"></button>
-            </div>
-          </article>
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
-            <div class="elements__caption">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-             </div>
-          </article>
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
-            <div class="elements__caption">
-              <h2 class="elements__title">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/zakat.jpg" alt="Закат в горах">
-            <div class="elements__caption">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/gori.jpg" alt="Гора">
-            <div class="elements__caption">
-              <h2 class="elements__title">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__card">
-            <img class="elements__place-photo" src="./images/zamok-v-gorax.jpg" alt="Замок в горах">
-            <div class="elements__caption">
-              <h2 class="elements__title">Карачаево-Черкессия</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
+          <template class="elements__template">
+            <article class="elements__card">
+              <button type="button" class="elements__delete"></button>
+              <img class="elements__place-photo" src="" alt="">
+              <div class="elements__caption">
+                <h2 class="elements__title"></h2>
+                <button type="button" class="elements__like"></button>
+              </div>
+            </article>
+          </template>
         </div>
     </main>
     <footer class="footer">
         <p class="footer__copy">&copy;2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup_opened">
+    <div class="popup">
       <div class="popup__container">
         <button type="button" class="popup__close-icon"></button>
         <form class="popup__main" name="profil">
           <h2 class="popup__title">Редактировать профиль</h2>
           <fieldset class="popup__input-container">
-            <input type="text" name="name" class="popup__info-field" placeholder="Ваше имя">
-            <input type="text" name="profi" class="popup__info-field" placeholder="Ваша профессия">
+            <input type="text" id="fname" class="popup__info-field" placeholder="Имя">
+            <input type="text" id="profi" class="popup__info-field" placeholder="О себе" >
           </fieldset>
           <button type="submit" class="popup__save">Сохранить</button>
         </form>
       </div>
     </div>
+    <div class="popup-cards">
+      <div class="popup-cards__container">
+        <button type="button" class="popup-cards__close-icon"></button>
+        <form class="popup-cards__main" name="cards">
+          <h2 class="popup-cards__title">Новое место</h2>
+          <fieldset class="popup-cards__input-container">
+            <input type="text" id="mesto" class="popup-cards__info-field" placeholder="Название">
+            <input type="text" id="ssulka" class="popup-cards__info-field" placeholder="Ссылка на картинку">
+          </fieldset>
+          <button type="submit" class="popup-cards__save">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup-image">
+      <div class="popup-image__container">
+        <button type="button" class="popup-image__close-icon"></button>
+      </div>
+      <p class="popup-image__caption">Гора Эльбрус</p>
+    </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

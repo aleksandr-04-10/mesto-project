@@ -1,0 +1,14 @@
+.popup-image__container {
+    width: 63.75%;
+    min-height: 540px;
+    background-image: url(../../../images/zakat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 560px) {
+  .popup-image__container {
+    max-width: 240px;
+    min-height: 299px;
+  }
+}

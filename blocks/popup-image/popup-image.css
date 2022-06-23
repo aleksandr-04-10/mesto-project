@@ -1,13 +1,13 @@
-.popup {
+.popup-image {
+  position: fixed;
   display: flex;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  position: fixed;
   top: 0;
   left: 0;
   font-family: 'Inter', 'Arial', sans-serif;
-  color: #000;
+  color: #fff;
   justify-content: center;
   align-items: center;
   flex-direction: column;
