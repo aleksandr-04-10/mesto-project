@@ -1,4 +1,4 @@
-.profile__button-add {
+.profile__card-edit {
   background-image: url(../../../images/plus.svg);
   background-size: 22px 22px;
   background-color: black;
@@ -11,12 +11,12 @@
   cursor: pointer;
 }
 
-.profile__button-add:hover {
+.profile__card-edit:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 945px) {
-  .profile__button-add {
+  .profile__card-edit {
     width: 278px;
     background-size: 16px 16px;
     margin-top: 36px;

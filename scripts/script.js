@@ -1,99 +1,4 @@
-const popup = document.querySelector('.popup');
-const popupCards = document.querySelector('.popup-cards');
-const popupImage = document.querySelector('.popup-image');
 
-//открытие\закрытие
-function opened(){
-  popup.classList.toggle('popup_opened');
-  nameInput.value = title.textContent;
-  jobInput.value = subtitle.textContent;
-}
-
-function openedCards(){
-  popupCards.classList.toggle('popup_opened');
-}
-
-function openedImage(){
-  popupImage.classList.toggle('popup_opened');
-}
-
-//находим кнопки
-const addButton = document.querySelector('.profile__button-add');
-addButton.addEventListener('click', openedCards);
-const closeButtonCards = document.querySelector('.popup-cards__close-icon');
-closeButtonCards.addEventListener('click', openedCards);
-const editButton = document.querySelector('.profile__button-edit');
-editButton.addEventListener('click', opened);
-const closeButton = document.querySelector('.popup__close-icon');
-closeButton.addEventListener('click', opened);
-//saveButton.addEventListener('submit',save)
-const closePhoto = document.querySelector('.popup-image__close-icon');
-closePhoto.addEventListener('click',openedImage);
-
-//формы
-let title = document.querySelector(".profile__title");
-let subtitle = document.querySelector('.profile__subtitle');
-// Находим форму в DOM
-//const popup = document.querySelector('.popup');// Воспользуйтесь методом querySelector()
-// Находим поля формы в DOM
-const nameInput = popup.querySelector('#fname');// Воспользуйтесь инструментом .querySelector()
-const jobInput = popup.querySelector('#profi');// Воспользуйтесь инструментом .querySelector()
-nameInput.value = title.textContent;
-jobInput.value = subtitle.textContent;
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-function formSubmitHandler (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    title.textContent="";
-    subtitle.textContent="";
-    title.textContent = nameInput.value; // Выберите элементы, куда должны быть вставлены значения полей
-    subtitle.textContent = jobInput.value;// Вставьте новые значения с помощью textContent
-    opened();
-}
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-popup.addEventListener('submit', formSubmitHandler);
-
-//popupCards
-const mestoInput = popupCards.querySelector('#mesto');// Воспользуйтесь инструментом .querySelector()
-const ssulkaInput = popupCards.querySelector('#ssulka');// Воспользуйтесь инструментом .querySelector()
-function popupCardsAdd (evt) {
-  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  const cardElement = elementTemplate.cloneNode(true);
-  mestoInput.value ='';
-  ssulkaInput.value = '';
-  cardElement.querySelector('.elements__title').textContent = mestoInput.value;
-  cardElement.querySelector('.elements__place-photo').src = ssulkaInput.value;
-
-  cardElement.querySelector('.elements__like').addEventListener('click', function(evt){
-    evt.target.classList.toggle('elements__like_active');// Лайки
-  });
-
-  cardElement.querySelector('.elements__delete').addEventListener('click', function(evt){
-    evt.target.nextSibling.parentElement.remove();// Удание
-  });
-
-  cardElement.querySelector('.elements__place-photo').addEventListener('click', function(evt){
-    popupImage.classList.toggle('popup_opened');
-    const adres = evt.target;
-    imageContainer.style.backgroundImage = `url(${adres.src})`;
-    imageCaption.innerText = adres.parentElement.innerText;
-  });
-
-  elements.append(cardElement);
-  openedCards();
-}
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-popupCards.addEventListener('submit', popupCardsAdd);
-
-//popup-image
-const imageContainer = document.querySelector('.popup-image__container');
-const imageCaption = document.querySelector('.popup-image__caption');
-
-//карточки из коробки
-const elements = document.querySelector('.elements');
-const elementTemplate = document.querySelector('.elements__template').content;
 const initialCards = [
   {
     name: 'Архыз',
@@ -120,29 +25,100 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   },
 ];
+const popupProfil = document.querySelector ('.popup_profil');
+const popupCards = document.querySelector ('.popup_cards');
+const popupImage = document.querySelector ('.popup_image');
+const profilEedit = document.querySelector ('.profile__profil-edit');
+const cardEdit = document.querySelector ('.profile__card-edit');
+const profileClose = document.querySelector ('.popup__close-profil');
+const cardClose = document.querySelector ('.popup__close-card');
+const imageClose = document.querySelector ('.popup__close-image');
+const title = document.querySelector (".profile__title");
+const subtitle = document.querySelector ('.profile__subtitle');
+const nameInput = popupProfil.querySelector ('#name');
+const jobInput = popupProfil.querySelector ('#job');
+const imageContainer = document.querySelector ('.popup__image-container');
+const imageCaption = document.querySelector ('.popup__image-caption');
+const elements = document.querySelector ('.elements');
+const elementTemplate = document.querySelector ('.elements__template').content;
+
+function inputFormProfile (){
+  nameInput.value = title.textContent;
+  jobInput.value = subtitle.textContent;
+}
+
+//открытие\закрытие
+function openedProfil (){
+  popupProfil.classList.toggle('popup_opened');
+  inputFormProfile();
+}
+
+function openedCards (){
+  popupCards.classList.toggle('popup_opened');
+}
+
+function openedImage (){
+  popupImage.classList.toggle('popup_opened');
+}
+
+profilEedit.addEventListener ('click', openedProfil);
+cardEdit.addEventListener ('click', openedCards);
+profileClose.addEventListener ('click', openedProfil);
+cardClose.addEventListener ('click', openedCards);
+imageClose.addEventListener ('click', openedImage);
+
+
+function formSubmitHandler (evt) {
+    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+    title.textContent = nameInput.value; // Выберите элементы, куда должны быть вставлены значения полей
+    subtitle.textContent = jobInput.value;// Вставьте новые значения с помощью textContent
+    openedProfil();
+}
+
+popupProfil.addEventListener ('submit', formSubmitHandler);
+
+//popupCards
+const placeInput = popupCards.querySelector('#place');// Воспользуйтесь инструментом .querySelector()
+const linkInput = popupCards.querySelector('#link');// Воспользуйтесь инструментом .querySelector()
+function addpopupCards (evt) {
+  evt.preventDefault (); // Эта строчка отменяет стандартную отправку формы.
+  const cardElement = elementTemplate.cloneNode (true);
+
+  cardElement.querySelector ('.elements__title').textContent = placeInput.value;
+  cardElement.querySelector ('.elements__place-photo').src = linkInput.value;
+  cardElement.querySelector ('.elements__place-photo').alt = placeInput.value;
+  creatureComponentCards (cardElement);
+  elements.prepend (cardElement);
+  openedCards();
+}
+
+popupCards.addEventListener('submit', addpopupCards);
 
 initialCards.forEach(function (element) {
   const cardElement = elementTemplate.cloneNode(true);
 
   cardElement.querySelector('.elements__title').textContent = element.name;
   cardElement.querySelector('.elements__place-photo').src = element.link;
+  cardElement.querySelector('.elements__place-photo').alt = element.name;
+  creatureComponentCards (cardElement);
 
-  cardElement.querySelector('.elements__like').addEventListener('click', function(evt){
-    evt.target.classList.toggle('elements__like_active');// Лайки
+  elements.append (cardElement);
+})
+
+function creatureComponentCards (cardElement){
+  cardElement.querySelector ('.elements__like').addEventListener ('click', function(evt){
+    evt.target.classList.toggle ('elements__like_active');// Лайки
   });
 
   cardElement.querySelector('.elements__delete').addEventListener('click', function(evt){
-    evt.target.nextSibling.parentElement.remove();// Удание
+    const elementDelete = evt.target.closest ('.elements__card');
+    elementDelete.remove ();
   });
 
-  cardElement.querySelector('.elements__place-photo').addEventListener('click', function(evt){
-    popupImage.classList.toggle('popup_opened');
-    const adres = evt.target;
-    imageContainer.style.backgroundImage = `url(${adres.src})`;
-    imageCaption.innerText = adres.parentElement.innerText;
+  cardElement.querySelector ('.elements__place-photo').addEventListener ('click', function(evt){
+    openedImage ()
+    const adres = evt.target.src;
+    imageContainer.style.backgroundImage = `url(${adres})`;
+    imageCaption.textContent = evt.target.alt;
   });
-
-  elements.append(cardElement);
-})
-//карточки из коробки
-
+}

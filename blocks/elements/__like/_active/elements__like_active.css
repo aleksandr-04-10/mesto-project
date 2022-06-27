@@ -3,5 +3,5 @@
 }
 
 .elements__like_active:hover {
-  opacity: 1;
+  opacity: 0.5;
 }

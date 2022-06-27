@@ -1,10 +1,10 @@
-.popup-cards__title {
+.popup__cards-title {
   margin: 2px 0 54px 36px;
   min-height: 23px;
 }
 
 @media screen and (max-width: 560px) {
-  .popup-cards__title {
+  .popup__cards-title {
     margin-top: 5px;
     margin-left: 22px;
     font-style: normal;

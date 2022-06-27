@@ -4,14 +4,22 @@
 @import url(../blocks/content/content.css);
 /* Стили следующей секции forms*/
 @import url(../blocks/popup/popup.css);
-
-@import url(../blocks/popup/__main/popup__main.css);
+@import url(../blocks/popup/_cards/popup_cards.css);
+@import url(../blocks/popup/_profil/popup_profil.css);
+@import url(../blocks/popup/__close-card/popup__close-card.css);
+@import url(../blocks/popup/__cards-title/popup__cards-title.css);
+@import url(../blocks/popup/__close-profil/popup__close-profil.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__info-field/popup__info-field.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
-@import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/__save/popup__save.css);
-@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/__main/popup__main.css);
+@import url(../blocks/popup/__profil-title/popup__profil-title.css);
+@import url(../blocks/popup/__save-card/popup__save-card.css);
+@import url(../blocks/popup/__save-profil/popup__save-profil.css);
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/__close-image/popup__close-image.css);
+@import url(../blocks/popup/__image-caption/popup__image-caption.css);
+@import url(../blocks/popup/_image/popup_image.css);
 /* Стили следующей секции header*/
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -22,8 +30,8 @@
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
 @import url(../blocks/profile/__container/profile__container.css);
-@import url(../blocks/profile/__button-add/profile__button-add.css);
-@import url(../blocks/profile/__button-edit/profile__button-edit.css);
+@import url(../blocks/profile/__card-edit/profile__card-edit.css);
+@import url(../blocks/profile/__profil-edit/profile__profil-edit.css);
 /* Стили следующей секции elements*/
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__delete/elements__delete.css);
@@ -36,18 +44,5 @@
 /* Стили следующей секции footer*/
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copy/footer__copy.css);
-/* Стили следующей секции popup-cards*/
-@import url(../blocks/popup-cards/popup-cards.css);
-@import url(../blocks/popup-cards/__main/popup-cards__main.css);
-@import url(../blocks/popup-cards/__container/popup-cards__container.css);
-@import url(../blocks/popup-cards/__info-field/popup-cards__info-field.css);
-@import url(../blocks/popup-cards/__input-container/popup-cards__input-container.css);
-@import url(../blocks/popup-cards/__title/popup-cards__title.css);
-@import url(../blocks/popup-cards/__save/popup-cards__save.css);
-@import url(../blocks/popup-cards/__close-icon/popup-cards__close-icon.css);
 /* Стили следующей секции popup-image*/
-@import url(../blocks/popup-image/popup-image.css);
-@import url(../blocks/popup-image/__container/popup-image__container.css);
-@import url(../blocks/popup-image/__close-icon/popup-image__close-icon.css);
-@import url(../blocks/popup-image/__caption/popup-image__caption.css);
 @import url(../blocks/popup/_opened/popup_opened.css);

@@ -1,4 +1,4 @@
-.popup-cards__close-icon {
+.popup__close-card {
   border: 0;
   padding: 0;
   width: 32px;
@@ -13,12 +13,12 @@
   background-repeat: no-repeat;
 }
 
-.popup-cards__close-icon:hover {
+.popup__close-card:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 560px) {
-  .popup-cards__close-icon {
+  .popup__close-card {
     margin-top: 0;
     top: -36px;
     width: 20px;
