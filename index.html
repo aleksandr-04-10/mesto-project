@@ -18,12 +18,14 @@
           <div class="profile__container">
             <img class="profile__avatar" src="./images/kusto-avatar.jpg" alt="Портрет Кусто">
             <div class="profile__info">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="button" class="profile__profil-edit"></button>
+              <div class="profile__info-container">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button type="button" class="profile__profil-edit popup_open-batton"></button>
+              </div>
               <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
-          <button type="button" class="profile__card-edit"></button>
+          <button type="button" class="profile__card-edit popup_open-batton"></button>
         </section>
         <div class="elements">
 
@@ -34,7 +36,7 @@
     </footer>
     <div class="popup popup_profil">
       <div class="popup__container">
-        <button type="button" class="popup__close-profil"></button>
+        <button type="button" class="popup__close-batton"></button>
         <form class="popup__main" name="profil">
           <h2 class="popup__profil-title">Редактировать профиль</h2>
           <fieldset class="popup__input-container">
@@ -47,7 +49,7 @@
     </div>
     <div class="popup popup_cards">
       <div class="popup__container">
-        <button type="button" class="popup__close-card"></button>
+        <button type="button" class="popup__close-batton"></button>
         <form class="popup__main" name="cards">
           <h2 class="popup__cards-title">Новое место</h2>
           <fieldset class="popup__input-container">
@@ -60,10 +62,9 @@
     </div>
     <div class="popup popup_image">
       <div class="popup__image-container">
-        <button type="button" class="popup__close-image"></button>
+        <button type="button" class="popup__close-batton"></button>
       </div>
       <p class="popup__image-caption">Гора Эльбрус</p>
-    </div>
     <template class="elements__template">
       <article class="elements__card">
         <button type="button" class="elements__delete"></button>

@@ -1,5 +1,5 @@
 .profile__profil-edit {
-  margin: 0;
+  margin: 0 0 0 18px;
   border: 0;
   background-image: url(../../../images/pero.svg);
   background-size: cover;
@@ -16,6 +16,7 @@
 
 @media screen and (max-width: 740px) {
   .profile__profil-edit {
+    margin-left: 10px;
     width: 18px;
     height: 18px;
   }

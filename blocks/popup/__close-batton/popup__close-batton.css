@@ -13,12 +13,12 @@
   background-repeat: no-repeat;
 }
 
-.popup__close-card:hover {
+.popup__close-batton:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 560px) {
-  .popup__close-card {
+  .popup__close-batton {
     margin-top: 0;
     top: -36px;
     width: 20px;

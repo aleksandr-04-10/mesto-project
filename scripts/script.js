@@ -27,98 +27,113 @@ const initialCards = [
 ];
 const popupProfil = document.querySelector ('.popup_profil');
 const popupCards = document.querySelector ('.popup_cards');
-const popupImage = document.querySelector ('.popup_image');
-const profilEedit = document.querySelector ('.profile__profil-edit');
-const cardEdit = document.querySelector ('.profile__card-edit');
-const profileClose = document.querySelector ('.popup__close-profil');
-const cardClose = document.querySelector ('.popup__close-card');
-const imageClose = document.querySelector ('.popup__close-image');
+const popupImage = document.querySelector('.popup_image')
+const popupCloseBotton = document.querySelectorAll('.popup__close-batton');
 const title = document.querySelector (".profile__title");
 const subtitle = document.querySelector ('.profile__subtitle');
 const nameInput = popupProfil.querySelector ('#name');
 const jobInput = popupProfil.querySelector ('#job');
 const imageContainer = document.querySelector ('.popup__image-container');
 const imageCaption = document.querySelector ('.popup__image-caption');
-const elements = document.querySelector ('.elements');
-const elementTemplate = document.querySelector ('.elements__template').content;
+const cardsContainer = document.querySelector ('.elements');
+const placeInput = popupCards.querySelector('#place');
+const linkInput = popupCards.querySelector('#link');
+const popups = document.querySelectorAll(".popup");
+const btns = document.querySelectorAll('.popup_open-batton')
 
-function inputFormProfile (){
+
+btns.forEach((item) => {
+  item.addEventListener('click', togglePopup);
+});
+
+popupCloseBotton.forEach((item) => {
+  item.addEventListener ('click',closePopup);
+});
+
+function inputFormProfile (evt){
   nameInput.value = title.textContent;
   jobInput.value = subtitle.textContent;
+  closePopup (evt);
 }
 
 //открытие\закрытие
-function openedProfil (){
-  popupProfil.classList.toggle('popup_opened');
-  inputFormProfile();
+  function togglePopup(evt){
+    console.log(evt.target);
+    const index = Array.from(btns).indexOf(evt.target);
+    if (index === 0 ||  index === 1) {
+      popups[index].classList.toggle("popup_opened");
+    } else {
+      popupImage.classList.toggle("popup_opened");
+    }
+  }
+
+function closePopup (evt){
+  const popup = evt.target.closest ('.popup');
+  popup.classList.toggle ('popup_opened');
 }
 
-function openedCards (){
-  popupCards.classList.toggle('popup_opened');
-}
 
-function openedImage (){
-  popupImage.classList.toggle('popup_opened');
-}
-
-profilEedit.addEventListener ('click', openedProfil);
-cardEdit.addEventListener ('click', openedCards);
-profileClose.addEventListener ('click', openedProfil);
-cardClose.addEventListener ('click', openedCards);
-imageClose.addEventListener ('click', openedImage);
-
-
-function formSubmitHandler (evt) {
+//popupProfilText
+function editProfilText (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     title.textContent = nameInput.value; // Выберите элементы, куда должны быть вставлены значения полей
     subtitle.textContent = jobInput.value;// Вставьте новые значения с помощью textContent
-    openedProfil();
+    inputFormProfile (evt);
 }
+popupProfil.addEventListener ('submit', editProfilText);// кнопка редактирования профиля
 
-popupProfil.addEventListener ('submit', formSubmitHandler);
 
-//popupCards
-const placeInput = popupCards.querySelector('#place');// Воспользуйтесь инструментом .querySelector()
-const linkInput = popupCards.querySelector('#link');// Воспользуйтесь инструментом .querySelector()
-function addpopupCards (evt) {
-  evt.preventDefault (); // Эта строчка отменяет стандартную отправку формы.
+const cardSubmitButton = (evt) => {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  cardAdd(cardsContainer, cardCreate(placeInput.value, linkInput.value));
+  closePopup (evt);
+};
+
+popupCards.addEventListener("submit", cardSubmitButton);// кнопка добавления карточки
+
+
+
+const cardCreate = (name, link) => {
+  // clon template 
+  const elementTemplate = document.querySelector ('.elements__template').content;
   const cardElement = elementTemplate.cloneNode (true);
 
-  cardElement.querySelector ('.elements__title').textContent = placeInput.value;
-  cardElement.querySelector ('.elements__place-photo').src = linkInput.value;
-  cardElement.querySelector ('.elements__place-photo').alt = placeInput.value;
-  creatureComponentCards (cardElement);
-  elements.prepend (cardElement);
-  openedCards();
-}
+  cardElement.querySelector ('.elements__title').textContent = name;
+  cardElement.querySelector ('.elements__place-photo').setAttribute("src", link);
+  cardElement.querySelector ('.elements__place-photo').alt = name;
 
-popupCards.addEventListener('submit', addpopupCards);
+  cardElement.querySelector('.elements__like').addEventListener("click", likeAdd);  
 
-initialCards.forEach(function (element) {
-  const cardElement = elementTemplate.cloneNode(true);
+  cardElement.querySelector('.elements__delete').addEventListener("click", cardRemove); 
 
-  cardElement.querySelector('.elements__title').textContent = element.name;
-  cardElement.querySelector('.elements__place-photo').src = element.link;
-  cardElement.querySelector('.elements__place-photo').alt = element.name;
-  creatureComponentCards (cardElement);
+  cardElement.querySelector('.elements__place-photo').addEventListener("click", imagesOpen); 
+                                                 
+  return cardElement;
+};
 
-  elements.append (cardElement);
-})
+// like
+const likeAdd = (evt) => {
+  evt.target.classList.toggle ('elements__like_active')
+};
 
-function creatureComponentCards (cardElement){
-  cardElement.querySelector ('.elements__like').addEventListener ('click', function(evt){
-    evt.target.classList.toggle ('elements__like_active');// Лайки
-  });
+// delete
+const cardRemove = (evt) => {
+  evt.target.closest('.elements__card').remove();
+};
+// image popup
+const imagesOpen = (evt) => {
 
-  cardElement.querySelector('.elements__delete').addEventListener('click', function(evt){
-    const elementDelete = evt.target.closest ('.elements__card');
-    elementDelete.remove ();
-  });
+  console.log (evt.target);
+  imageContainer.style.backgroundImage = `url(${evt.target.src})`;
+  imageCaption.textContent = evt.target.alt;
+  togglePopup(evt);
+};
+// add
+const cardAdd = (cardsContainer, cardElement) => {
+  cardsContainer.prepend(cardElement);
+};
 
-  cardElement.querySelector ('.elements__place-photo').addEventListener ('click', function(evt){
-    openedImage ()
-    const adres = evt.target.src;
-    imageContainer.style.backgroundImage = `url(${adres})`;
-    imageCaption.textContent = evt.target.alt;
-  });
-}
+// render
+initialCards.forEach((element) =>
+  cardAdd(cardsContainer, cardCreate(element.name, element.link))
+);
