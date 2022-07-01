@@ -58,7 +58,6 @@ function inputFormProfile (evt){
 
 //открытие\закрытие
   function togglePopup(evt){
-    console.log(evt.target);
     const index = Array.from(btns).indexOf(evt.target);
     if (index === 0 ||  index === 1) {
       popups[index].classList.toggle("popup_opened");
@@ -122,8 +121,6 @@ const cardRemove = (evt) => {
 };
 // image popup
 const imagesOpen = (evt) => {
-
-  console.log (evt.target);
   imageContainer.style.backgroundImage = `url(${evt.target.src})`;
   imageCaption.textContent = evt.target.alt;
   togglePopup(evt);
