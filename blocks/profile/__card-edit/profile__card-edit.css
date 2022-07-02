@@ -15,11 +15,16 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 945px) {
+@media screen and (max-width: 962px) {
   .profile__card-edit {
-    width: 278px;
-    background-size: 16px 16px;
     margin-top: 36px;
+    width: 278px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .profile__card-edit {
+    background-size: 16px 16px;
     margin-top: 36px;
   }
 }

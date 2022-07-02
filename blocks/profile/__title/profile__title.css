@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 450px) {
   .profile__title {
     max-width: 189px;
     font-size: 27px;

@@ -9,11 +9,14 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 945px) {
+@media screen and (max-width: 962px) {
   .profile {
     justify-content: center;
+    flex-direction: column;
   }
 }
+
+
 
 @media screen and (max-width: 430px) {
   .profile {
