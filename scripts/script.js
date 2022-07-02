@@ -45,13 +45,19 @@ const cardCreateButton = document.querySelector('.profile__card-edit');
 const profileCloseButton = document.querySelector('.popup__close-batton-profile');
 const cardCloseButton = document.querySelector('.popup__close-batton-card');
 const imageCloseButton = document.querySelector('.popup__close-batton-image');
-const profileSaveButton = document.querySelector('.popup__main');
+const profileSaveForm = document.forms['profil'];
 
-profileCreateButton.addEventListener("click", () => togglePopup(popupProfil));
+profileCreateButton.addEventListener("click", openPropfilePopup);
 cardCreateButton.addEventListener("click", () => togglePopup(popupCards));
 profileCloseButton.addEventListener("click", () => togglePopup(popupProfil));
 cardCloseButton.addEventListener("click", () => togglePopup(popupCards));
 imageCloseButton.addEventListener("click", () => togglePopup(popupImage));
+
+function openPropfilePopup() { 
+  nameInput.value = title.textContent;
+  jobInput.value = subtitle.textContent;//заполняем поля формы 
+  togglePopup(popupProfil)//вызываем функцию для открытия попапа 
+  } 
 
 //открытие\закрытие
 function togglePopup(popup) {
@@ -65,13 +71,14 @@ function editProfilText (evt) {
     subtitle.textContent = jobInput.value;// Вставьте новые значения с помощью textContent
     togglePopup(popupProfil);
 }
-profileSaveButton.addEventListener ('submit', editProfilText);// кнопка редактирования профиля
+profileSaveForm.addEventListener ("submit", editProfilText);// кнопка редактирования профиля
 
 
 const editCardContent = (evt) => {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   addCard(cardsContainer, createCard(placeInput.value, linkInput.value));
   togglePopup(popupCards);
+  document.forms['cards'].reset()
 };
 
 popupCards.addEventListener("submit", editCardContent);// кнопка добавления карточки
@@ -108,6 +115,7 @@ const removeCard = (evt) => {
 // image popup
 const openImages = (evt) => {
   imageContainer.src = `${evt.target.src}`;
+  imageContainer.alt = evt.target.alt;
   imageCaption.textContent = evt.target.alt;
   togglePopup(popupImage);
 };
